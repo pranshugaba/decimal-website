@@ -13,9 +13,8 @@
 body {
   padding: 4rem 2rem;
   width: 100%;
-  min-height: 100vh;
-  display: grid;
-  justify-content: center;
+  max-width: 65ch;
+  margin-inline: auto;
   background: #f9fafb;
   color: #111827;
 }
