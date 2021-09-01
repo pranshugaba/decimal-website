@@ -1,0 +1,37 @@
+# Workflow to build and deploy to your GitHub Pages repo.
+name: Github Pages Astro CI
+
+on:
+  # Triggers the workflow on push and pull request events but only for the main branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Install dependencies with npm
+      - name: Install dependencies
+        run: yarn
+
+      # Build the project and add .nojekyll file to supress default behaviour
+      - name: Build
+        run: |
+          yarn run build
+          touch ./dist/.nojekyll
+
+      # Push to your pages repo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
