@@ -1,8 +1,14 @@
 <section>
-    <h1> Decimal Clock </h1>
-    <p>A new way of reading time</p>
+    <div>
+        <h1> Decimal Clock </h1>
+        <p>A new way of reading time</p>
 
-    <a href="https://play.google.com/store/apps/details?id=com.tenhourstudios.decimalclock&utm_source=Website&utm_campaign=Homepage">Get the app</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tenhourstudios.decimalclock&utm_source=Website&utm_campaign=Homepage" target="_blank" rel="noreferrer noopener">Get the app</a>
+    </div>
+    <picture>
+        <source srcset="/assets/img/clock-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="/assets/img/clock-light.png" />
+    </picture>
 </section>
 
 <aside>
@@ -15,3 +21,21 @@
         </li>
     </ul>
 </aside>
+
+<style>
+section {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+img {
+    width: 100%;
+    max-width: 250px;
+    border: 10px solid var(--bg);
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.3);
+}
+</style>
