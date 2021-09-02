@@ -7,22 +7,24 @@
   font-family: sans-serif;
   --font-mono: monospace;
   font-size: 125%;
+  --bg: #ffffff;
+  --fg: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141414;
+    --fg: #ffffff;
+  }
 }
 
 body {
   padding: 0.8rem;
   max-width: 65ch;
   margin-inline: auto;
-  background: #f9fafb;
-  color: #111827;
+  background: var(--bg);
+  color: var(--fg);
   line-height: 2;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #111827;
-    color: #fff;
-  }
 }
 
 a {
