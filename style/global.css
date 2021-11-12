@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+//  margin: 0;
 }
 
 :root {
@@ -24,7 +24,7 @@ body {
   margin-inline: auto;
   background: var(--bg);
   color: var(--fg);
-  line-height: 2;
+  line-height: 1.5;
 }
 
 a {
